@@ -11,10 +11,11 @@ namespace TestesDonaMariana.Dominio.ModuloMateria
 
             RuleFor(x => x.NomeMateria) // validação do nome da matéria
                 .NotEmpty()
-                .NotNull()
-                .NotEqual(x => x.NomeMateria);
-             
-              
+                .NotNull();
+               // .NotEqual(x => x.NomeMateria);
+
+
+
 
         }
     }

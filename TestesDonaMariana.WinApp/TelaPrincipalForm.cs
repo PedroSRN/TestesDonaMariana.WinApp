@@ -88,6 +88,7 @@ namespace TestesDonaMariana.WinApp
         private void ConfigurarTelaPrincipal(ToolStripMenuItem opcaoSelecionada)
         {
             var tipo = opcaoSelecionada.Text;
+            
 
             controlador = controladores[tipo];
 
@@ -139,6 +140,6 @@ namespace TestesDonaMariana.WinApp
           
         }
 
-        
+       
     }
 }

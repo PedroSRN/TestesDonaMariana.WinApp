@@ -10,8 +10,8 @@ namespace TestesDonaMariana.Dominio.ModuloQuestao
         {
             RuleFor(x => x.TituloPergunta)
                 .NotEmpty()
-                .NotNull()
-                .NotEqual(x => x.TituloPergunta);
+                .NotNull();
+               // .NotEqual(x => x.TituloPergunta);
                 
                
 

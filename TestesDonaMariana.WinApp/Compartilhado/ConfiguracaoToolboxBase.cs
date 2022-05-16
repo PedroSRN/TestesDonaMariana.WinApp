@@ -16,6 +16,8 @@ namespace TestesDonaMariana.WinApp.Compartilhado
 
         public abstract string TooltipExcluir { get; }
 
+        public virtual string TooltipGerarPdf { get; }
+
         public virtual bool InserirHabilitado { get { return true; } }
 
         public virtual bool EditarHabilitado { get { return true; } }
