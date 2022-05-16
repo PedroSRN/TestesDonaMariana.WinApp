@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using TestesDonaMariana.Dominio.ModuloMateria;
 using TestesDonaMariana.Dominio.ModuloQuestao;
+using TestesDonaMariana.Dominio.ModuloQuestoes;
 using TestesDonaMariana.Infra.Arquivos.ModuloQuestoes;
 using TestesDonaMariana.WinApp.Compartilhado;
 using TestesDonaMariana.WinApp.Modulo_Materia;
@@ -15,7 +16,7 @@ namespace TestesDonaMariana.WinApp.ModuloQuestoes
         private readonly IRepositorioMateria repositorioMateria;
 
         private TabelaQuestaoControl tabelaQuestao;
-
+      //  private List<Materia> materias;
 
         public ControladorQuestao(IRepositorioQuestao repositorioQuestao, IRepositorioMateria repositorioMateria)
         {
@@ -26,13 +27,20 @@ namespace TestesDonaMariana.WinApp.ModuloQuestoes
         public override void Inserir()
         {
             var materias = repositorioMateria.SelecionarTodos();
-            var questao = repositorioQuestao.SelecionarTodos();
+            //var questao = repositorioQuestao.SelecionarTodos();
 
             TelaCadastroQuestaoForm tela = new TelaCadastroQuestaoForm(materias);
             tela.Questoes = new Questao();
 
             tela.GravarRegistro = repositorioQuestao.Inserir;
 
+            Questao questaoSelecionada = ObtemQuestaoSelecionada();
+
+               List<Alternativas> alternativas = tela.AlternativasAdicionadas;
+
+               repositorioQuestao.AdicionarAlternativas(questaoSelecionada, alternativas);
+               
+            
             DialogResult resultado = tela.ShowDialog();
 
             if (resultado == DialogResult.OK)
@@ -89,6 +97,19 @@ namespace TestesDonaMariana.WinApp.ModuloQuestoes
             }
         }
 
+        //public virtual void AdicionarAlternativas()
+        //{
+        //    Questao questaoSelecionada = ObtemQuestaoSelecionada();
+
+           
+          
+        //    {
+        //        List<Alternativas> alternativas = tela.AlternativasAdicionadas;
+
+        //        repositorioQuestao.AdicionarAlternativas(questaoSelecionada, alternativas);
+        //        CarregarQuestoes();
+        //    }
+        //}
         public override ConfiguracaoToolboxBase ObtemConfiguracaoToolbox()
         {
             return new ConfiguracaoToolboxQuestao();

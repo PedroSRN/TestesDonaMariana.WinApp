@@ -3,6 +3,7 @@ using FluentValidation;
 using System.Collections.Generic;
 using System.Linq;
 using TestesDonaMariana.Dominio.ModuloQuestao;
+using TestesDonaMariana.Dominio.ModuloQuestoes;
 
 namespace TestesDonaMariana.Infra.Arquivos.ModuloQuestoes
 {
@@ -20,6 +21,16 @@ namespace TestesDonaMariana.Infra.Arquivos.ModuloQuestoes
         {
             return dataContext.Questoes;
         }
+
+        public void AdicionarAlternativas(Questao questaoSelecionada, List<Alternativas> alternativas)
+        {
+            foreach(var item in alternativas)
+            {
+                questaoSelecionada.AdicionarAlternativa(item);
+            }
+        }
+
+
 
         public override AbstractValidator<Questao> ObterValidador()
         {

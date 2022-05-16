@@ -51,7 +51,7 @@ namespace TestesDonaMariana.WinApp.ModuloQuestoes
 
             foreach (Questao questao in questoes)
             {
-                Grid_Questao.Rows.Add(questao.Numero, questao.Disciplina,questao.Materia.NomeMateria, questao.TituloPergunta); // adicionar a Materia 
+                Grid_Questao.Rows.Add(questao.Numero, questao.Disciplina,questao.Materia.NomeMateria, questao.TituloPergunta); 
             }
         }
     }

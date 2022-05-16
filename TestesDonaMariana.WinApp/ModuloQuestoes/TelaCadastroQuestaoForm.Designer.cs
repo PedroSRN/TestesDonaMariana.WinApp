@@ -37,6 +37,9 @@
             this.btn_Gravar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.comboBox_Disciplina = new System.Windows.Forms.ComboBox();
+            this.txt_Alternativas = new System.Windows.Forms.TextBox();
+            this.btn_Adicionar = new System.Windows.Forms.Button();
+            this.list_Alternativas = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +66,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(10, 167);
+            this.label3.Location = new System.Drawing.Point(10, 188);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 16);
             this.label3.TabIndex = 3;
@@ -128,12 +131,42 @@
             this.comboBox_Disciplina.TabIndex = 9;
             this.comboBox_Disciplina.SelectedIndexChanged += new System.EventHandler(this.comboBox_Disciplina_SelectedIndexChanged);
             // 
+            // txt_Alternativas
+            // 
+            this.txt_Alternativas.Location = new System.Drawing.Point(125, 185);
+            this.txt_Alternativas.Name = "txt_Alternativas";
+            this.txt_Alternativas.Size = new System.Drawing.Size(170, 23);
+            this.txt_Alternativas.TabIndex = 10;
+            // 
+            // btn_Adicionar
+            // 
+            this.btn_Adicionar.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Adicionar.Location = new System.Drawing.Point(301, 184);
+            this.btn_Adicionar.Name = "btn_Adicionar";
+            this.btn_Adicionar.Size = new System.Drawing.Size(131, 23);
+            this.btn_Adicionar.TabIndex = 11;
+            this.btn_Adicionar.Text = "Adicionar";
+            this.btn_Adicionar.UseVisualStyleBackColor = true;
+            this.btn_Adicionar.Click += new System.EventHandler(this.btn_Adicionar_Click);
+            // 
+            // list_Alternativas
+            // 
+            this.list_Alternativas.FormattingEnabled = true;
+            this.list_Alternativas.ItemHeight = 15;
+            this.list_Alternativas.Location = new System.Drawing.Point(120, 227);
+            this.list_Alternativas.Name = "list_Alternativas";
+            this.list_Alternativas.Size = new System.Drawing.Size(312, 199);
+            this.list_Alternativas.TabIndex = 12;
+            // 
             // TelaCadastroQuestaoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(489, 521);
+            this.Controls.Add(this.list_Alternativas);
+            this.Controls.Add(this.btn_Adicionar);
+            this.Controls.Add(this.txt_Alternativas);
             this.Controls.Add(this.comboBox_Disciplina);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_Gravar);
@@ -166,5 +199,8 @@
         private System.Windows.Forms.Button btn_Gravar;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.ComboBox comboBox_Disciplina;
+        private System.Windows.Forms.TextBox txt_Alternativas;
+        private System.Windows.Forms.Button btn_Adicionar;
+        private System.Windows.Forms.ListBox list_Alternativas;
     }
 }

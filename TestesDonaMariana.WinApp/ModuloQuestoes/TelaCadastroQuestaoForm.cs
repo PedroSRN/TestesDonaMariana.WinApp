@@ -4,6 +4,8 @@ using TestesDonaMariana.Dominio.ModuloQuestao;
 using FluentValidation.Results;
 using TestesDonaMariana.WinApp.Modulo_Materia;
 using System.Collections.Generic;
+using TestesDonaMariana.Dominio.ModuloQuestoes;
+using System.Linq;
 
 namespace TestesDonaMariana.WinApp.ModuloQuestoes
 {
@@ -18,6 +20,7 @@ namespace TestesDonaMariana.WinApp.ModuloQuestoes
             
             CarregarDisciplinas();
             this.materias = materias;
+
 
             
         }
@@ -50,6 +53,14 @@ namespace TestesDonaMariana.WinApp.ModuloQuestoes
             }
         }
         public Func<Questao, ValidationResult> GravarRegistro { get; internal set; }
+      
+        public List<Alternativas> AlternativasAdicionadas 
+        {
+            get
+            {
+                return list_Alternativas.Items.Cast<Alternativas>().ToList();
+            } 
+        }
 
         private void btn_Gravar_Click(object sender, EventArgs e)
         {
@@ -57,7 +68,9 @@ namespace TestesDonaMariana.WinApp.ModuloQuestoes
             
             questao.Disciplina = (DisciplinaEnum)comboBox_Disciplina.SelectedItem;
             questao.Materia = (Materia)comboBox_Materia.SelectedItem;
-            questao.Materia = (Materia)comboBox_Materia.SelectedItem;
+
+            
+            
 
             var resultadoValidacao = GravarRegistro(questao);
 
@@ -86,7 +99,16 @@ namespace TestesDonaMariana.WinApp.ModuloQuestoes
 
         }
 
-        
-      
+        private void btn_Adicionar_Click(object sender, EventArgs e)
+        {
+            List<string> tituloAlterntiva = AlternativasAdicionadas.Select(x => x.TituloAlternativa).ToList();
+
+            if (tituloAlterntiva.Count == 0 || tituloAlterntiva.Contains(txt_Alternativas.Text) == false)
+            {
+                Alternativas alternativas = new Alternativas();
+                alternativas.TituloAlternativa = txt_Alternativas.Text;
+                list_Alternativas.Items.Add(alternativas);
+            }
+        }
     }
 }
