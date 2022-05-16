@@ -105,6 +105,7 @@
             // btn_Inserir
             // 
             this.btn_Inserir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_Inserir.Enabled = false;
             this.btn_Inserir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Inserir.Image = global::TestesDonaMariana.WinApp.Properties.Resources.inserir__1_;
             this.btn_Inserir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -118,6 +119,7 @@
             // btn_Editar
             // 
             this.btn_Editar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_Editar.Enabled = false;
             this.btn_Editar.Image = global::TestesDonaMariana.WinApp.Properties.Resources.editar_arquivo__1_;
             this.btn_Editar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Editar.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -130,6 +132,7 @@
             // btn_Excluir
             // 
             this.btn_Excluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_Excluir.Enabled = false;
             this.btn_Excluir.Image = global::TestesDonaMariana.WinApp.Properties.Resources.excluir__1_;
             this.btn_Excluir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Excluir.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -142,6 +145,7 @@
             // btn_GerarPDF
             // 
             this.btn_GerarPDF.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_GerarPDF.Enabled = false;
             this.btn_GerarPDF.Image = global::TestesDonaMariana.WinApp.Properties.Resources.simbolo_de_formato_de_arquivo_pdf;
             this.btn_GerarPDF.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_GerarPDF.ImageTransparentColor = System.Drawing.Color.Magenta;
